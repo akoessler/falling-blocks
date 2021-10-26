@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{573F0221-BB6A-4465-8ABB-72E1BCDBBF3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FallingBlocks.Engine.Core</RootNamespace>
+    <AssemblyName>FallingBlocks.Engine.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\MediaPlayer.cs" />
+    <Compile Include="Core\ABehavior.cs" />
+    <Compile Include="Core\AGame.cs" />
+    <Compile Include="Core\ARenderObject.cs" />
+    <Compile Include="Core\BehaviorCollection.cs" />
+    <Compile Include="Core\Behavior\CallbackBehaviour.cs" />
+    <Compile Include="Core\Behavior\IObjectWithBehavior.cs" />
+    <Compile Include="Core\Behavior\MemberChangeRelative.cs" />
+    <Compile Include="Core\Behavior\MemberAnimatorAbsolute.cs" />
+    <Compile Include="Core\Behavior\MemberChange.cs" />
+    <Compile Include="Core\Behavior\RemoveFromParent.cs" />
+    <Compile Include="Core\Behavior\WaitBehavior.cs" />
+    <Compile Include="Core\Events\EventHandling.cs" />
+    <Compile Include="Core\Events\EventType.cs" />
+    <Compile Include="Core\Events\IKeyEventManager.cs" />
+    <Compile Include="Core\Events\OnEvent.cs" />
+    <Compile Include="Core\IGameLauncher.cs" />
+    <Compile Include="Core\IRenderContext.cs" />
+    <Compile Include="Core\Primitive\Text.cs" />
+    <Compile Include="Core\Primitive\Rectangle.cs" />
+    <Compile Include="Core\Primitive\Image2D.cs" />
+    <Compile Include="Core\Primitive\Particles.cs" />
+    <Compile Include="Core\Propertyaccess\PropertyAccess.cs" />
+    <Compile Include="Core\Propertyaccess\PropertyAccessFloat.cs" />
+    <Compile Include="Core\Propertyaccess\PropertyAccessPointF.cs" />
+    <Compile Include="Core\RenderObjectCollection.cs" />
+    <Compile Include="Core\Resource\AResource.cs" />
+    <Compile Include="Core\Resource\ImageResource.cs" />
+    <Compile Include="Core\Resource\ResourceCollection.cs" />
+    <Compile Include="Core\ASceneGraph.cs" />
+    <Compile Include="Effects\EffectsChanger.cs" />
+    <Compile Include="Ogl\AOpenGL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Render\Gdi\GdiRenderContext.cs" />
+    <Compile Include="Render\Ogl\OglRenderContext.cs" />
+    <Compile Include="Render\Ogl\Texture2D.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ColorExtensions.cs" />
+    <Compile Include="Util\CosinusProgressConverter.cs" />
+    <Compile Include="Util\FloatHelper.cs" />
+    <Compile Include="Util\ListExtensions.cs" />
+    <Compile Include="Util\PointfExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Particle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
