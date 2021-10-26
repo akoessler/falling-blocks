@@ -52,3 +52,13 @@ https://creativecommons.org/licenses/by/3.0/deed.en_US
 This project is licensed under [MIT license](LICENSE).
 
 External sources see list above.
+
+## Important Note
+
+This was originally created in 2015 as part of a larger suite of self-written games by multiple people, called "SSTSS". That whole suite is not published publicly.
+
+Credits to parts of the original engine go to:
+* Michael Kurz
+* Michael Lechner
+
+Now in 2021 I have only extracted my game from that suite, with major reworks to the game and the engine to not have licensed stuff here.
